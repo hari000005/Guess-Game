@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .zero{
+            height: 800px; display: flex; justify-content: center; align-items: center; 
+        }
+        .one{
+            /* border: 1px solid; */ border-radius: 10px; box-shadow: 1px 1px 10px rgb(255, 0, 0);
+            background-color: rgb(0, 255, 153);
+            height: 200px;
+            width: 550px;
+            justify-items:center;
+        }
+        .one:hover{
+            scale: 1.02;
+            transition: all 0.8s ease-in-out; background-color: rgb(187, 255, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="zero">
+    <div class="one">
+
+      <h1 >GUESS THE NUMBER FROM 1 - 10 </h1>
+      <input id="guessnum"> 
+      <button onclick="check()">Check</button>
+      <p id="res1" >You are Wrong / Right</p>
+      <p id="score">Score : 10</p>
+    
+    </div>
+</div>
+
+    <script>
+
+        alert("Welcom To Guess Game")
+
+        var guessnum  = document.getElementById("guessnum")
+        var res =  document.getElementById("res1")
+       var score = document.getElementById("score")
+
+       var randomNum = Math.floor(Math.random()*10)+1
+
+        var totscore = 10
+
+        function check() {
+
+            var enteredNum = guessnum.value
+
+            if(randomNum==enteredNum){
+
+                res.innerText = " You are Right"
+                console.log(" You are Right");
+            
+                alert("Congratz....Y r Won ..!!")
+            }
+
+            else{
+
+                res.innerText = " You are WRONG"
+
+                 totscore = totscore-1
+
+                score.innerText = "Score : "+totscore
+            }
+        }
+
+    </script>
+</body>
+</html>
